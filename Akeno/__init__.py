@@ -1,4 +1,3 @@
-
 import asyncio
 import logging
 import os
@@ -22,7 +21,7 @@ from pyrogram.raw.all import layer
 from pyrogram.types import *
 
 from Akeno.utils.logger import LOGS
-from config import API_HASH, API_ID, SESSION, SESSION2
+from config import API_HASH, API_ID, SESSION, SESSION2, SESSION3, SESSION4
 
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 logging.basicConfig(level=logging.INFO)
@@ -37,39 +36,41 @@ ids = []
 act = []
 db = {}
 
+
 SUDOERS = filters.user()
 
 __version__ = {
     "pyrogram": pyrogram_version,
     "python": python_version(),
 }
-# Initialize a default client
-client = Client(
-    "one",
-    app_version="latest",
-    device_model="Akeno",
-    system_version="Linux",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    session_string=SESSION,
-    plugins=dict(root="Akeno.plugins"),
-)
-clients.append(client)
 
-'''if SESSION2:
-    for index, session in enumerate(SESSION2):
-        try:
-            client_name = f"client_{index + 1}"
-            client2 = Client(
-                client_name,
-                app_version="Special Version",
-                device_model="Special Device",
-                system_version="Linux",
-                api_id=API_ID,
-                api_hash=API_HASH,
-                session_string=session,
-                plugins=dict(root="Akeno.plugins"),
-            )
-            clients.append(client2)
-        except Exception as e:
-            logger.error(f"Failed to initialize client for session {session}: {e}")'''
+APP_VERSION = "latest"
+DEVICE_MODEL = "Akeno"
+SYSTEM_VERSION = "Linux"
+PLUGINS_ROOT = "Akeno.plugins"
+
+def create_and_append_client(name, session_string):
+    if session_string:
+        client = Client(
+            name,
+            app_version=APP_VERSION,
+            device_model=DEVICE_MODEL,
+            system_version=SYSTEM_VERSION,
+            api_id=API_ID,
+            api_hash=API_HASH,
+            session_string=session_string,
+            plugins=dict(root=PLUGINS_ROOT),
+        )
+        
+        clients.append(client) 
+
+
+sessions = [
+    ("two", SESSION2),
+    ("one", SESSION),
+    ("three", SESSION3),
+    ("four", SESSION4)
+]
+
+for name, session in sessions:
+    create_and_append_client(name, session)
