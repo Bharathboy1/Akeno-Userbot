@@ -7,6 +7,9 @@ load_dotenv()
 API_ID = os.environ["API_ID"]
 API_HASH = os.environ["API_HASH"]
 SESSION = os.environ["SESSION"]
+SESSION2 = getenv("SESSION2", "")
+SESSION3 = getenv("SESSION3", "")
+SESSION4 = getenv("SESSION4", "")
 GOOGLE_API_KEY = os.environ["GOOGLE_API_KEY"]
 MONGO_URL = os.environ["MONGO_URL"]
 CMD_HANDLER = getenv("CMD_HANDLER", ".")
