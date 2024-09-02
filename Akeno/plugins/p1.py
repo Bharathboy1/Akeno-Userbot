@@ -12,7 +12,8 @@ client_reply_messages = {
     "two": "UQAXRBHAaTZcyRgVN54K8FqnAS9ZnhLT8NOhV36EHUtrpCQi",
     "one": "UQAcpGyz8ciRwYMBQIwT7cHrrmaPgAKNMF95PG-qaPc-hpEA",
     "three": "UQBqAubq2phpLyOXyQT4twxryLsWZFIJ437gwLhvohAc18kq",
-    "four": "UQDoiTdMCqHvV93tGiCeHW4s5ULnFPnjpkC0tZbOyi_IAEJR"
+    "four": "UQDoiTdMCqHvV93tGiCeHW4s5ULnFPnjpkC0tZbOyi_IAEJR",
+    "five": "UQDVAvu6YJcm5E90OGD6FGaqmakDCS8QdMeJXW13DsOFdNsH"
 }
 
 # Optimized list of target patterns with non-capturing groups
