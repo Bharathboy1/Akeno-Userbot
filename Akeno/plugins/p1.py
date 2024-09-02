@@ -4,7 +4,6 @@ import string
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-
 # Constants for target chat and channel IDs
 TARGET_CHAT_ID = [-1002068064532, -1002214107507]
 TARGET_CHANNEL_ID = [-1002195132204, -1002212156629]
@@ -14,11 +13,11 @@ client_reply_messages = {
     "three": "UQBqAubq2phpLyOXyQT4twxryLsWZFIJ437gwLhvohAc18kq",
     "four": "UQDoiTdMCqHvV93tGiCeHW4s5ULnFPnjpkC0tZbOyi_IAEJR",
     "five": "UQDVAvu6YJcm5E90OGD6FGaqmakDCS8QdMeJXW13DsOFdNsH",
-    "six" : "UQA89uwzmb0kjzzQunF-NH0G7pQvVj2k5awqWduQKOyTiw96",
+    "six": "UQA89uwzmb0kjzzQunF-NH0G7pQvVj2k5awqWduQKOyTiw96",
     "sev": "UQDmw_yd95yWYjFnPnHZgFmgfslqNjI9qUp3_NTN_KuX0fSi",
-    "eig": "",
-    "nin": "",
-    "ten" : ""
+    "eig": "UQDkUJr4Otn4is--C26zmhvg7mEWRooHv7urvom93gBrZ_80",  # Consider providing meaningful default or handling empty strings
+    "nin": "",  # Consider providing meaningful default or handling empty strings
+    "ten": ""   # Consider providing meaningful default or handling empty strings
 }
 
 # Optimized list of target patterns with non-capturing groups
@@ -47,7 +46,8 @@ async def reply_to_message(client: Client, message: Message):
                 client_name = next((name for name in client_reply_messages if client.name == name), None)
                 if client_name:
                     reply_message = client_reply_messages.get(client_name, f"{random_char}")
-                    await message.reply_text(reply_message)
+                    if reply_message:  # Avoid sending empty replies
+                        await message.reply_text(reply_message)
     except Exception as e:
         # Handle and log the exception
         print(f"An error occurred: {e}")
