@@ -11,6 +11,7 @@ SESSION2 = getenv("SESSION2", "")
 SESSION3 = getenv("SESSION3", "")
 SESSION4 = getenv("SESSION4", "")
 SESSION5 = getenv("SESSION5", "")
+SESSION6 = getenv("SESSION6", "")
 
 GOOGLE_API_KEY = os.environ["GOOGLE_API_KEY"]
 MONGO_URL = os.environ["MONGO_URL"]
