@@ -21,7 +21,7 @@ from pyrogram.raw.all import layer
 from pyrogram.types import *
 
 from Akeno.utils.logger import LOGS
-from config import API_HASH, API_ID, SESSION, SESSION2, SESSION3, SESSION4
+from config import API_HASH, API_ID, SESSION, SESSION2, SESSION3, SESSION4, SESSION5, SESSION6
 
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 logging.basicConfig(level=logging.INFO)
@@ -69,7 +69,11 @@ sessions = [
     ("two", SESSION2),
     ("one", SESSION),
     ("three", SESSION3),
-    ("four", SESSION4)
+    ("four", SESSION4),
+    ("five", SESSION5),
+    ("six", SESSION6)
+
+    
 ]
 
 for name, session in sessions:
