@@ -13,7 +13,8 @@ client_reply_messages = {
     "one": "UQAcpGyz8ciRwYMBQIwT7cHrrmaPgAKNMF95PG-qaPc-hpEA",
     "three": "UQBqAubq2phpLyOXyQT4twxryLsWZFIJ437gwLhvohAc18kq",
     "four": "UQDoiTdMCqHvV93tGiCeHW4s5ULnFPnjpkC0tZbOyi_IAEJR",
-    "five": "UQDVAvu6YJcm5E90OGD6FGaqmakDCS8QdMeJXW13DsOFdNsH"
+    "five": "UQDVAvu6YJcm5E90OGD6FGaqmakDCS8QdMeJXW13DsOFdNsH",
+    "six" : "UQA89uwzmb0kjzzQunF-NH0G7pQvVj2k5awqWduQKOyTiw96"
 }
 
 # Optimized list of target patterns with non-capturing groups
