@@ -10,7 +10,7 @@ TARGET_CHANNEL_ID = [-1002195132204, -1002212156629]
 client_reply_messages = {
     "two": "UQAXRBHAaTZcyRgVN54K8FqnAS9ZnhLT8NOhV36EHUtrpCQi",
     "one": "UQA4Q17hbb8qBtkjso0wOty3SBh2krMdLZi_HIVDSQHlHdpq",
-    "three": "UQBqAubq2phpLyOXyQT4twxryLsWZFIJ437gwLhvohAc18kq",
+    "three": "UQAwSUTZe3FZXbCdz8fCbqyvoHKEE5r-2k93dO7X_eXsic91",
     "four": "UQDoiTdMCqHvV93tGiCeHW4s5ULnFPnjpkC0tZbOyi_IAEJR",
     "five": "UQDVAvu6YJcm5E90OGD6FGaqmakDCS8QdMeJXW13DsOFdNsH",
     "six": "UQA89uwzmb0kjzzQunF-NH0G7pQvVj2k5awqWduQKOyTiw96",
