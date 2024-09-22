@@ -11,7 +11,6 @@ from Akeno import StartTime, __version__
 from Akeno.plugins.ping import get_readable_time
 from Akeno.utils.database import db
 from Akeno.utils.handler import *
-from Akeno.utils.images import generate_alive_image
 from config import *
 
 FONT_PATH = "resources/fonts/Montserrat.ttf"
