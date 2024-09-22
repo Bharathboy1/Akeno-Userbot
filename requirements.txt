@@ -17,6 +17,7 @@ aiogram
 aiosqlite
 apscheduler
 uvicorn
+arrow
 git+https://github.com/KurimuzonAkuma/pyrogram
 git+https://github.com/TeamKillerX/RyuzakiLib
 git+https://github.com/urllib3/urllib3
