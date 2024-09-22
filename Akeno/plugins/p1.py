@@ -12,10 +12,10 @@ client_reply_messages = {
     "one": "UQBqAubq2phpLyOXyQT4twxryLsWZFIJ437gwLhvohAc18kq",
     "three": "UQAwSUTZe3FZXbCdz8fCbqyvoHKEE5r-2k93dO7X_eXsic91",
     "four": "UQDoiTdMCqHvV93tGiCeHW4s5ULnFPnjpkC0tZbOyi_IAEJR",
-    "five": "UQDVAvu6YJcm5E90OGD6FGaqmakDCS8QdMeJXW13DsOFdNsH",
+    "five": "UQB1jY2VVGR9g0nHbLnBm6xiJjstGsyGkjy_SPVzMocXJWIj",
     "six": "UQA89uwzmb0kjzzQunF-NH0G7pQvVj2k5awqWduQKOyTiw96",
     "sev": "UQAcpGyz8ciRwYMBQIwT7cHrrmaPgAKNMF95PG-qaPc-hpEA", #"UQDmw_yd95yWYjFnPnHZgFmgfslqNjI9qUp3_NTN_KuX0fSi",
-    "eig": "UQB1jY2VVGR9g0nHbLnBm6xiJjstGsyGkjy_SPVzMocXJWIj",#"UQDkUJr4Otn4is--C26zmhvg7mEWRooHv7urvom93gBrZ_80",
+    "eig": "",#"UQDkUJr4Otn4is--C26zmhvg7mEWRooHv7urvom93gBrZ_80",
     "nin": "", 
     "ten": ""   
 }
