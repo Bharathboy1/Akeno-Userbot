@@ -15,7 +15,7 @@ client_reply_messages = {
     "five": "UQB1jY2VVGR9g0nHbLnBm6xiJjstGsyGkjy_SPVzMocXJWIj",
     "six": "UQA89uwzmb0kjzzQunF-NH0G7pQvVj2k5awqWduQKOyTiw96",
     "sev": "UQAcpGyz8ciRwYMBQIwT7cHrrmaPgAKNMF95PG-qaPc-hpEA", #"UQDmw_yd95yWYjFnPnHZgFmgfslqNjI9qUp3_NTN_KuX0fSi",
-    "eig": "",#"UQDkUJr4Otn4is--C26zmhvg7mEWRooHv7urvom93gBrZ_80",
+    "eig": "UQB23uT-m6K54WMSNIbDKVg3gGXxQHlfw7QC2MhhwQqGiOc6",#"UQDkUJr4Otn4is--C26zmhvg7mEWRooHv7urvom93gBrZ_80",
     "nin": "", 
     "ten": ""   
 }
