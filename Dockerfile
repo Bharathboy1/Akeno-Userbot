@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Install system dependencies
 RUN apt -qq update && apt -qq install -y --no-install-recommends \
-    ffmpeg curl git python3-dev python3-pip && \
+    curl git python3-dev python3-pip && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Copy application files and install Python dependencies
