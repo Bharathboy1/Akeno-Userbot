@@ -48,7 +48,7 @@ APP_VERSION = "latest"
 DEVICE_MODEL = "Akeno"
 SYSTEM_VERSION = "Linux"
 PLUGINS_ROOT = "Akeno.plugins"
-PLUGINS_ROOT2 = ["Akeno.plugins","Akeno.plugins2"]
+PLUGINS_ROOT2 = "Akeno.plugins2"
 
 riddle_client = Client(
     "eig",
