@@ -2,10 +2,7 @@ import google.generativeai as genai
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-
 GOOGLE_API_KEY = "AIzaSyBZr5CYt5bhIsRz6KTDlclM3hLBbgwSGq0"
-
-
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
@@ -13,13 +10,7 @@ genai.configure(api_key=GOOGLE_API_KEY)
 TARGET_CHAT_ID = [-1002068064532, -1002214107507]
 TARGET_CHANNEL_ID = [-1002195132204, -1002212156629]
 
-def is_riddle(text):
-    """Check if the message contains a riddle."""
-    keywords = ["riddle", "I am", "what am I", "guess", "solve"]  # Keywords to detect riddles
-    return any(keyword in text.lower() for keyword in keywords)
-
 def chatgpt(query):
-    
     try:
         genai.configure(api_key=GOOGLE_API_KEY)
         model_flash = genai.GenerativeModel(
@@ -39,19 +30,25 @@ def chatgpt(query):
     except Exception as e:
         return str(e)
 
+async def is_riddle_detected(query):
+    """Ask the AI if the given query is a riddle."""
+    response = chatgpt(f"Is this a riddle? '{query}' Please answer with 'yes' or 'no'.")
+    return response.strip().lower() == 'yes'
+
 @Client.on_message(filters.chat(TARGET_CHAT_ID) & ~filters.service & ~filters.bot, group=-2)
 async def reply_to_message(client: Client, message: Message):
     if message.sender_chat and message.sender_chat.id in TARGET_CHANNEL_ID:
-        if message.text and is_riddle(message.text):
-            riddle = f"{message.text.strip()} give answer only"
-            print(f"Riddle detected: {riddle}")
+        if message.text and '?' in message.text:  # Check if the message contains a question mark
+            # Ask the AI to detect if the message is a riddle
+            is_riddle_answer = await is_riddle_detected(message.text)
 
-            # Get the AI's response to the riddle
-            answer = chatgpt(riddle)  # Using the new chatgpt function
-            print(f"Answer: {answer}")
+            if is_riddle_answer:
+                riddle = f"{message.text.strip()} give answer only"
 
-            # Reply to the riddle in the comments (as a reply to the original message)
-            await message.reply_text(answer)  # This will post as a comment in the channel
+                # Get the AI's response to the riddle
+                answer = chatgpt(riddle)  # Using the new chatgpt function
+
+                # Reply to the riddle in the comments (as a reply to the original message)
+                await message.reply_text(answer)  # This will post as a comment in the channel
         else:
-            print("Message is not a riddle, ignoring.")
-
+            return None  # Do nothing if the conditions are not met
