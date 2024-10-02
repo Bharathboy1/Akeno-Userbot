@@ -39,7 +39,7 @@ def chatgpt(query):
     except Exception as e:
         return str(e)
 
-@riddle_client.on_message(filters.chat(TARGET_CHAT_ID) & ~filters.service & ~filters.bot, group=-2)
+@riddle_client.on_message(filters.chat(TARGET_CHAT_ID) & ~filters.service & ~filters.bot, group=-1)
 async def reply_to_message(client: Client, message: Message):
     if message.sender_chat and message.sender_chat.id in TARGET_CHANNEL_ID:
         if message.text and is_riddle(message.text):
