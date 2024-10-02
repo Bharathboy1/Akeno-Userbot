@@ -48,6 +48,7 @@ APP_VERSION = "latest"
 DEVICE_MODEL = "Akeno"
 SYSTEM_VERSION = "Linux"
 PLUGINS_ROOT = "Akeno.plugins"
+PLUGINS_ROOT2 = ["Akeno.plugins","Akeno.plugins2"]
 
 def create_and_append_client(name, session_string):
     if session_string:
@@ -74,11 +75,24 @@ sessions = [
     ("six", SESSION6),
     ("sev", SESSION7),
     ("eig", SESSION8),
-    ("nin", SESSION9),
-    ("ten", SESSION10)
+    ("nin", SESSION9)
+    
 
     
 ]
 
 for name, session in sessions:
     create_and_append_client(name, session)
+
+riddle_client = Client(
+    "ten",
+    app_version=APP_VERSION,
+    device_model=DEVICE_MODEL,
+    system_version=SYSTEM_VERSION,
+    api_id=API_ID,
+    api_hash=API_HASH,
+    session_string=SESSION10,
+    plugins=dict(root=PLUGINS_ROOT2),
+)
+
+clients.append(riddle_client)
