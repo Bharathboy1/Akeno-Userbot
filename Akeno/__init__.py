@@ -58,6 +58,7 @@ riddle_client = Client(
     plugins=dict(root=PLUGINS_ROOT2),
 )
 
+# Append the riddle client to the clients list
 clients.append(riddle_client)
 
 def create_and_append_client(name, session_string):
