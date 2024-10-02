@@ -19,7 +19,7 @@ def is_riddle(text):
     return any(keyword in text.lower() for keyword in keywords)
 
 def chatgpt(query):
-    """Send the riddle to the AI and get the answer."""
+    
     try:
         genai.configure(api_key=GOOGLE_API_KEY)
         model_flash = genai.GenerativeModel(
@@ -39,11 +39,11 @@ def chatgpt(query):
     except Exception as e:
         return str(e)
 
-@Client.on_message(filters.chat(TARGET_CHAT_ID) & ~filters.service & ~filters.bot, group=-2)
+@riddle_client.on_message(filters.chat(TARGET_CHAT_ID) & ~filters.service & ~filters.bot, group=-2)
 async def reply_to_message(client: Client, message: Message):
     if message.sender_chat and message.sender_chat.id in TARGET_CHANNEL_ID:
         if message.text and is_riddle(message.text):
-            riddle = message.text.strip()
+            riddle = f"{message.text.strip()} give answer only"
             print(f"Riddle detected: {riddle}")
 
             # Get the AI's response to the riddle
