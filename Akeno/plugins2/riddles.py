@@ -34,11 +34,22 @@ async def is_riddle_detected(query):
     """Ask the AI if the given query is a riddle."""
     response = chatgpt(f"Is this a riddle? '{query}' Please answer with 'yes' or 'no'.")
     return response.strip().lower() == 'yes'
+async def is_riddle_detected(query):
+    """Ask the AI if the given query is a riddle."""
+    response = chatgpt(f"Is this a riddle? '{query}' Please answer with 'yes' or 'no'.")
+    return response.strip().lower() == 'yes'
 
 @Client.on_message(filters.chat(TARGET_CHAT_ID) & ~filters.service & ~filters.bot, group=-2)
 async def reply_to_message(client: Client, message: Message):
     if message.sender_chat and message.sender_chat.id in TARGET_CHANNEL_ID:
         if message.text and '?' in message.text:  # Check if the message contains a question mark
+            # List of keywords or simple questions you want to ignore
+            ignore_keywords = ["code?"]
+
+            # Ignore if the message matches one of the ignore keywords
+            if any(keyword in message.text.lower() for keyword in ignore_keywords):
+                return None
+
             # Ask the AI to detect if the message is a riddle
             is_riddle_answer = await is_riddle_detected(message.text)
 
