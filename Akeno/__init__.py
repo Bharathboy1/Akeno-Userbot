@@ -84,15 +84,4 @@ sessions = [
 for name, session in sessions:
     create_and_append_client(name, session)
 
-riddle_client = Client(
-    "ten",
-    app_version=APP_VERSION,
-    device_model=DEVICE_MODEL,
-    system_version=SYSTEM_VERSION,
-    api_id=API_ID,
-    api_hash=API_HASH,
-    session_string=SESSION10,
-    plugins=dict(root=PLUGINS_ROOT2),
-)
 
-clients.append(riddle_client)
