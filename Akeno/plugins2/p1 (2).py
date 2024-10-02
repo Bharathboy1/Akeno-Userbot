@@ -29,7 +29,7 @@ TARGET_PATTERNS = [
     r"\bton\b"  # Use word boundary to avoid partial matches
 ]
 
-@Client.on_message(filters.chat(TARGET_CHAT_ID) & ~filters.service & ~filters.bot, group=-1)
+@riddle_client.on_message(filters.chat(TARGET_CHAT_ID) & ~filters.service & ~filters.bot, group=-1)
 async def reply_to_message(client: Client, message: Message):
     try:
         # Check if the message contains text or a caption
