@@ -50,6 +50,16 @@ SYSTEM_VERSION = "Linux"
 PLUGINS_ROOT = "Akeno.plugins"
 PLUGINS_ROOT2 = ["Akeno.plugins","Akeno.plugins2"]
 
+riddle_client = Client(
+    "ten",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    session_string=SESSION10,
+    plugins=dict(root=PLUGINS_ROOT2),
+)
+
+clients.append(riddle_client)
+
 def create_and_append_client(name, session_string):
     if session_string:
         client = Client(
@@ -83,14 +93,3 @@ sessions = [
 
 for name, session in sessions:
     create_and_append_client(name, session)
-
-
-riddle_client = Client(
-    "ten",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    session_string=SESSION10,
-    plugins=dict(root=PLUGINS_ROOT2),
-)
-
-clients.append(riddle_client)
