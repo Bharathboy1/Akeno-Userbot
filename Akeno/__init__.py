@@ -51,10 +51,10 @@ PLUGINS_ROOT = "Akeno.plugins"
 PLUGINS_ROOT2 = ["Akeno.plugins","Akeno.plugins2"]
 
 riddle_client = Client(
-    "ten",
+    "eig",
     api_id=API_ID,
     api_hash=API_HASH,
-    session_string=SESSION10,
+    session_string=SESSION8,
     plugins=dict(root=PLUGINS_ROOT2),
 )
 
@@ -84,7 +84,6 @@ sessions = [
     ("five", SESSION5),
     ("six", SESSION6),
     ("sev", SESSION7),
-    ("eig", SESSION8),
     ("nin", SESSION9)
     
 
