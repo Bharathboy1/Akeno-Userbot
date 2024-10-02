@@ -21,7 +21,7 @@ from pyrogram.raw.all import layer
 from pyrogram.types import *
 
 from Akeno.utils.logger import LOGS
-from config import API_HASH, API_ID, SESSION, SESSION2, SESSION3, SESSION4, SESSION5, SESSION6,SESSION7, SESSION8, SESSION9, SESSION10
+from config import API_HASH, API_ID, SESSION, SESSION2, SESSION3, SESSION4, SESSION5, SESSION6, SESSION7, SESSION8, SESSION9, SESSION10
 
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 logging.basicConfig(level=logging.INFO)
@@ -36,7 +36,6 @@ ids = []
 act = []
 db = {}
 
-
 SUDOERS = filters.user()
 
 __version__ = {
@@ -50,6 +49,7 @@ SYSTEM_VERSION = "Linux"
 PLUGINS_ROOT = "Akeno.plugins"
 PLUGINS_ROOT2 = "Akeno.plugins2"
 
+# Create the riddle client before appending to clients list
 riddle_client = Client(
     "eig",
     api_id=API_ID,
@@ -74,8 +74,7 @@ def create_and_append_client(name, session_string):
             plugins=dict(root=PLUGINS_ROOT),
         )
         
-        clients.append(client) 
-
+        clients.append(client)
 
 sessions = [
     ("two", SESSION2),
@@ -86,10 +85,9 @@ sessions = [
     ("six", SESSION6),
     ("sev", SESSION7),
     ("nin", SESSION9)
-    
-
-    
 ]
 
 for name, session in sessions:
     create_and_append_client(name, session)
+
+# You can now proceed to start your clients
