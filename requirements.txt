@@ -20,6 +20,7 @@ aiogram
 aiosqlite
 apscheduler
 uvicorn
+google-generativeai
 arrow
 icrawler
 unidecode
