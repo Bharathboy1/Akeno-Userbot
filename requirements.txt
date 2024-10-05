@@ -8,6 +8,7 @@ ffmpeg-python
 pymongo
 uvloop
 fastapi
+motor
 Telethon==1.24.0
 SQLAlchemy==1.3.23
 python-dotenv
